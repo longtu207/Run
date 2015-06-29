@@ -1,4 +1,4 @@
-var DEBUG_DRAW = false;
+
 
 var FPS = 30;
 

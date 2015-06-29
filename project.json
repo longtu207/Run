@@ -20,6 +20,8 @@
     "src/ZSEngine/ActorManage.js",
     "src/Player/Player.js",
     "src/Player/PlayerManage.js",
-    "src/ZSEngine/Tools.js"
+    "src/ZSEngine/Tools.js",
+    "src/ZSEngine/Sprite.js",
+    "src/ZSEngine/SpriteManage.js"
   ]
 }

@@ -1,3 +1,4 @@
+var DEBUG_DRAW = false;
 
 Tools_RectMix = function(rect1,rect2){
 	

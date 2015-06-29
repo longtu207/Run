@@ -31,7 +31,15 @@ var GameLayer = cc.Layer.extend({
 		
 		this._winSize = new cc.size(cc.winSize.width, cc.winSize.height);
 		
+		var test = new SpriteManage();
+		this.addChild(test, 100);
 		
+		
+		for (var i = 0; i < 100; i++) {
+			var tests = new Sprite(res.CloseNormal_png);
+			tests.setPosition(100+i*10, 300);
+			test.addSprite(tests);
+		}
 		
 		ccs.armatureDataManager.addArmatureFileInfo(res.actor_1_csb);
 		

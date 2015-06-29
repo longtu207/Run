@@ -1,5 +1,3 @@
-var Actor_STATE_NORMAL = 100;
-var Actor_STATE_DEAD = 101;
 
 var Actor_const = {
 		STATE_NORMAL : 100,
@@ -28,6 +26,10 @@ var Actor = ccs.Armature.extend({
 			this.debugDraw();
 		}
 		
+		
+		
+		
+		
 		return true;
 	},
 	
@@ -37,6 +39,14 @@ var Actor = ccs.Armature.extend({
 	
 	setState : function(state) {
 		this._state = state;
+	},
+	
+	setProState : function(state){
+		this._proState = state;
+	},
+	
+	getProState : function() {
+		return this._proState;
 	},
 	
 	cycle:function(dt){
@@ -50,8 +60,10 @@ var Actor = ccs.Armature.extend({
 	setBodyPonit:function(){
 		this._body1 = [];
 		this._body2 = [];
-		
-		for(var i = 0 ; i < 100 ; ++i){
+//		cc.getmap
+//		cc.log("le : "+ this.getBoneNum());
+//		cc.log("name : "+this.getAnimation().getMovementID());
+		for(var i = 0 ; i < this.getBoneNum() ; ++i){
 			var str = "body"+i+"_1";
 			
 			if(this.getBone(str)){
