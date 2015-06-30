@@ -20,7 +20,7 @@ var Actor = ccs.Armature.extend({
 		this._body1 = new Array();
 		this._body2 = new Array();
 		
-		this.setBodyPonit();
+//		this.setBodyPonit();
 		this.playWithIndex(0);
 		if(DEBUG_DRAW){
 			this.debugDraw();
@@ -53,10 +53,6 @@ var Actor = ccs.Armature.extend({
 		
 	},
 	
-	getCurrentMovementID:function(){
-		return "";
-	},
-	
 	setBodyPonit:function(){
 		this._body1 = [];
 		this._body2 = [];
@@ -77,6 +73,14 @@ var Actor = ccs.Armature.extend({
 		}
 	},
 	
+	isCollisionBodyRect : function(rect) {
+		return this.isCollisionBodyRectByIndext(rect,0);
+	},
+	
+	isCollisionBodyRectByIndext : function(rect,indext) {
+		return cc.rectIntersectsRect(this.getBodyRectByIndext(indext), rect);
+	},
+	
 	getBodyRect:function(){
 		return this.getBodyRectByIndext(0);
 	},
@@ -85,7 +89,7 @@ var Actor = ccs.Armature.extend({
 		if(indext>this._body1.length){
 			cc.log(this.getName() +"getBodyRect indext is over!");
 		}
-		var rect = cc.rect(this._body1[indext].x+this.x, this._body1[indext].y+this.y, this._body2[indext].x-this._body1[indext].x, this._body2[indext].y-this._body1[indext].y);
+		var rect = cc.rect(this._body1[indext].x+this.x, this._body2[indext].y+this.y, this._body2[indext].x-this._body1[indext].x, this._body1[indext].y-this._body2[indext].y);
 		
 		return rect;
 	},

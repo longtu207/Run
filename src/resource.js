@@ -8,6 +8,14 @@ var res = {
     	
     actor_1_csb : "res/player/actor_1.csb",
     
+    bullet_1_csb : "res/bullet/bullet_1.csb",
+    
+    enemy_1_csb : "res/enemy/enemy_1.csb",
+    
+    rock_1_csb : "res/block/rock_1.csb",
+    
+    gold_1_csb : "res/item/item_10.csb",
+    
     DemoPlayer_csb : "res/test/DemoPlayer.ExportJson",
  
     
@@ -17,5 +25,9 @@ var g_GameRes = [
     res.bg1_1_png,
     res.bg1_2_png,
     res.actor_1_csb,
+    res.bullet_1_csb,
+    res.enemy_1_csb,
+    res.rock_1_csb,
+    res.gold_1_csb,
     res.DemoPlayer_csb,
 ];

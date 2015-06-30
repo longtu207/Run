@@ -6,17 +6,18 @@ var Bullet_const = {
 var Bullet = Actor.extend({
 
 	_id : 0,
-	_type : TYPE_0,
+	_type : Bullet_const.TYPE_0,
 	_atk : 1,
 	
 	_speedX : 0,
 	_speedY : 10,
 
-	ctor:function (name,id,type) {
+	ctor:function (name,type) {
 
 		this._super(name);
 
-		this._id = id;
+		this._id = BULLET_ID;
+		BULLET_ID++;
 		this._type = type;
 
 		return true;
@@ -29,9 +30,10 @@ var Bullet = Actor.extend({
 		if (this._type == Bullet_const.TYPE_1) {
 
 		}else{
-//			if (cc.c) {
-//				
-//			}
+			if (!cc.rectIntersectsRect(this.getBodyRect(),screenRect)) {
+				
+				this.toDead();
+			}
 		}
 	},
 	
@@ -41,5 +43,10 @@ var Bullet = Actor.extend({
 		if (this._type == Bullet_const.TYPE_1) {
 			
 		}
+	},
+	
+	setSpeed : function(sx,sy) {
+		this._speedX = sx;
+		this._speedY = sy;
 	},
 });

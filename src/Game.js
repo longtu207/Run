@@ -5,17 +5,31 @@ var GameScene = cc.Scene.extend({
 		this.addChild(layer);
 	}
 });
-
+var Game_instance = null;
 var GameLayer = cc.Layer.extend({
 	
 	BG_Z : -100,
-	PLAYER_Z : -20,
+	
+	PLAYER_Z : -50,
+	
+	ENEMY_Z : -40,
+	
+	ITEM_Z : -30,
+	
+	BLOCK_Z : -20,
+	
+	BULLET_Z : -10,
 	FG_Z : 0,
+	
 	
 	_backGround : null,
 	_foreGround : null,
 	
 	_player : null,
+	_bullet : null,
+	_enemy : null,
+	_block : null,
+	_item : null,
 	
 	_oldTouchPos : null,
 	
@@ -25,9 +39,13 @@ var GameLayer = cc.Layer.extend({
 	
 	_winSize : null,
 	
+	_addET : 0,
+	
 	ctor:function () {
 		
 		this._super();
+		
+		Game_instance = this;
 		
 		this._winSize = new cc.size(cc.winSize.width, cc.winSize.height);
 		
@@ -41,7 +59,11 @@ var GameLayer = cc.Layer.extend({
 			test.addSprite(tests);
 		}
 		
+		ccs.armatureDataManager.addArmatureFileInfo(res.bullet_1_csb);
 		ccs.armatureDataManager.addArmatureFileInfo(res.actor_1_csb);
+		ccs.armatureDataManager.addArmatureFileInfo(res.enemy_1_csb);
+		ccs.armatureDataManager.addArmatureFileInfo(res.rock_1_csb);
+		ccs.armatureDataManager.addArmatureFileInfo(res.gold_1_csb);
 		
 //		var _actorNode = new ccs.BatchNode();
 		
@@ -66,6 +88,20 @@ var GameLayer = cc.Layer.extend({
 		
 //		this._player.drawBodyRect();
 		
+		this._bullet = new BulletManage();
+		
+		this.addChild(this._bullet, this.BULLET_Z);
+		
+		this._enemy = new EnemyManage();
+		this.addChild(this._enemy, this.ENEMY_Z);
+		
+		this._block = new BlockManage();
+		this.addChild(this._block, this.BLOCK_Z);
+		
+		this._item = new ItemManage();
+		this.addChild(this._item, this.ITEM_Z);
+		
+		
 		this.addKey();
 		
 		this.addMouse();
@@ -75,6 +111,14 @@ var GameLayer = cc.Layer.extend({
 		this.scheduleUpdate();
 		
 		return true;
+	},
+	
+	getBullet : function() {
+		return this._bullet;
+	},
+	
+	getPlayer : function() {
+		return this._player;
 	},
 	
 	addTouches : function() {
@@ -258,7 +302,66 @@ var GameLayer = cc.Layer.extend({
 		this._foreGround.cycle(dt);
 		
 		this._player.cycle(dt);
-			
+		this._bullet.cycle(dt);
+		this._enemy.cycle(dt);
+		this._block.cycle(dt);
+		this._item.cycle(dt);
+		
+		this.playerCycle(dt);
+		
+		this._addET--;
+//		cc.log("ran : "+Tools_Random(0,100));
+		if(this._addET<0){
+			this._addET=60;
+//			this._enemy.addEnemy("enemy_1", Enemy_const.TYPE_1, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height),cc.p(0, BG_SPEED));
+			this._block.addBlock("rock_1", Block_const.TYPE_1, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height));
+//			this._item.addItem("item_10", Item_const.TYPE_GOLD, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height));
+		}
+//		cc.log("yes 1 "+this._bullet.getActor().length);
 //			cc.log("x : "+this.actor1.getBone("test2").getWorldInfo().x);
+	},
+	
+	playerCycle : function(dt){
+		var playerSet = this._player.getActor();
+		var blockSet = this._block.getActor();
+		var enemySet = this._enemy.getActor();
+		var itemSet = this._item.getActor();
+		
+		for (var i = 0; i < playerSet.length; i++) {
+			var player = playerSet[i];
+			
+			var playerRect = new cc.rect(player.getBodyRect().x+this._player.x, player.getBodyRect().y+this._player.y, player.getBodyRect().width, player.getBodyRect().height);
+			
+			for (var j = 0; j < itemSet.length; j++) {
+				if (itemSet[j].getState() == Actor_const.STATE_NORMAL) {
+					if (cc.rectIntersectsRect(playerRect, itemSet[j].getBodyRect())) {
+						if (itemSet[j].getType() == Item_const.TYPE_HELP) {
+							if (!this._player.getIsAddAll()&&this._player.addHelp("actor_1")) {
+								itemSet[j].toDead();
+							}
+						}else{
+							itemSet[j].toDead();
+						}
+						
+					}
+				}
+			}
+			
+			for (var j = 0; j < blockSet.length; j++) {
+				
+				if (cc.rectIntersectsRect(playerRect, blockSet[j].getBodyRect())) {
+					player.toDead();
+				}
+			}
+			for (var j = 0; j < enemySet.length; j++) {
+//				if(player.isCollisionBodyRect(enemySet[j].getBodyRect())){
+//					player.toDead();
+//				}
+				
+				if(cc.rectIntersectsRect(playerRect, enemySet[j].getBodyRect())){
+					player.toDead();
+				}
+			}
+		}
 	},
 });

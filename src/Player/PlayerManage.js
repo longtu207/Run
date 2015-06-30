@@ -8,7 +8,9 @@ var PlayerManage = ActorManage.extend({
 	
 	_isAddAll : false,
 	
-	_pos : null,
+	_pos : [],
+	_pos1 : [],
+	_add : [false,false,false,false,false],
 
 	ctor:function () {
 		this._super();
@@ -18,7 +20,7 @@ var PlayerManage = ActorManage.extend({
 		
 		var jx = 30;
 		var jy = 70;
-		this._pos = [];
+		
 		this._pos.push(pos);
 		
 		this._pos.push([pos[0]-jx,pos[1]-jy]);
@@ -30,6 +32,14 @@ var PlayerManage = ActorManage.extend({
 		this._pos.push([pos[0],pos[1]-jy*2]);
 		
 		this._pos.push([pos[0]+jx*2,pos[1]-jy*2]);
+		
+		this._pos1.push([pos[0]-jx,pos[1]+jy]);
+		this._pos1.push([pos[0]+jx,pos[1]+jy]);
+		this._pos1.push([pos[0]-jx*2,pos[1]+jy*2]);
+
+		this._pos1.push([pos[0],pos[1]+jy*2]);
+
+		this._pos1.push([pos[0]+jx*2,pos[1]+jy*2]);
 		
 //		this._bodyRect = new cc.rect(0,0,0,0);
 		
@@ -70,10 +80,38 @@ var PlayerManage = ActorManage.extend({
 		return this._bodyRect;
 	},
 	
+	addHelp : function(name) {
+		for (var i = 0; i < this._add.length; i++) {
+			if (!this._add[i]) {
+				var player = new Player(name);
+				player.setPosition(this._pos[i][0], this._pos[i][1]);
+				player.setIndext(i+6);
+				this.addActor(player);
+				this.setBodyRect();
+				this._add[i]= true;
+				return true;
+			}
+		}
+		this._isAddAll = true;
+		return false;
+	},
+	
+	setIsAddAll : function(all) {
+		this._isAddAll = all;
+	},
+	
+	getIsAddAll : function() {
+		return this._isAddAll;
+	},
+	
+	setAddInfo : function(has,indext) {
+		this._add[indext]=has;
+	},
+	
 	drawBodyRect : function() {
 		var darw = new cc.DrawNode();
 
-		darw.drawRect(cc.p(this._bodyRect.x, this._bodyRect.y), cc.p(this._bodyRect.x+this._bodyRect.width, this._bodyRect.y-this._bodyRect.height), cc.color(0, 0, 255, 180), 2, cc.color(0, 0, 0, 180));
+		darw.drawRect(cc.p(this._bodyRect.x, this._bodyRect.y), cc.p(this._bodyRect.x+this._bodyRect.width, this._bodyRect.y+this._bodyRect.height), cc.color(0, 0, 255, 180), 2, cc.color(0, 0, 0, 180));
 
 		darw.drawCircle(cc.p(this._bodyRect.x, this._bodyRect.y), 10, 360, 10, true, 5, cc.color(0, 0, 0, 100));
 		

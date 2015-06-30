@@ -22,6 +22,14 @@
     "src/Player/PlayerManage.js",
     "src/ZSEngine/Tools.js",
     "src/ZSEngine/Sprite.js",
-    "src/ZSEngine/SpriteManage.js"
+    "src/ZSEngine/SpriteManage.js",
+    "src/Bullet/Bullet.js",
+    "src/Bullet/BulletManage.js",
+    "src/Enemy/Enemy.js",
+    "src/Enemy/EnemyManage.js",
+    "src/Block/Block.js",
+    "src/Block/BlockManage.js",
+    "src/Item/Item.js",
+    "src/Item/ItemManage.js"
   ]
 }
