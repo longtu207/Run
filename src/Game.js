@@ -49,23 +49,36 @@ var GameLayer = cc.Layer.extend({
 		
 		this._winSize = new cc.size(cc.winSize.width, cc.winSize.height);
 		
-		var test = new SpriteManage();
-		this.addChild(test, 100);
-		
-		
-		for (var i = 0; i < 100; i++) {
-			var tests = new Sprite(res.CloseNormal_png);
-			tests.setPosition(100+i*10, 300);
-			test.addSprite(tests);
-		}
+//		var test = new SpriteManage();
+//		this.addChild(test, 100);
+//		
+//		
+//		for (var i = 0; i < 100; i++) {
+//			var tests = new Sprite(res.CloseNormal_png);
+//			tests.setPosition(100+i*10, 300);
+//			test.addSprite(tests);
+//		}
+//		cc.loader.register("csb", loader);
+//		var loader = new Loader();
+//		cc.log(""+loader.retrieve());
 		
 		ccs.armatureDataManager.addArmatureFileInfo(res.bullet_1_csb);
 		ccs.armatureDataManager.addArmatureFileInfo(res.actor_1_csb);
 		ccs.armatureDataManager.addArmatureFileInfo(res.enemy_1_csb);
+		ccs.armatureDataManager.addArmatureFileInfo(res.enemy_200_csb);
+		ccs.armatureDataManager.addArmatureFileInfo(res.enemy_201_csb);
 		ccs.armatureDataManager.addArmatureFileInfo(res.rock_1_csb);
 		ccs.armatureDataManager.addArmatureFileInfo(res.gold_1_csb);
+		ccs.armatureDataManager.addArmatureFileInfo(res.help_1_csb);
 		
-//		var _actorNode = new ccs.BatchNode();
+//		var zs = ccs.CSLoader.createNode(res.scene_1_csb);
+//		var zs = ccs.csLoader.createNode(res.scene_1_csb);
+//		var zs = json.node;
+//		var zs = ccs.sceneReader.createNodeWithSceneFile(res.scene_1_csb);
+//		cc.log("zs : "+zs);
+//		cc.log("gogogogo");
+//		this.addChild(zs);
+		
 		
 		this._backGround = new BackGround();
 		
@@ -109,6 +122,8 @@ var GameLayer = cc.Layer.extend({
 		this.addTouches();
 		
 		this.scheduleUpdate();
+		this.addSceneData();
+		
 		
 		return true;
 	},
@@ -313,9 +328,11 @@ var GameLayer = cc.Layer.extend({
 //		cc.log("ran : "+Tools_Random(0,100));
 		if(this._addET<0){
 			this._addET=60;
-//			this._enemy.addEnemy("enemy_1", Enemy_const.TYPE_1, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height),cc.p(0, BG_SPEED));
-			this._block.addBlock("rock_1", Block_const.TYPE_1, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height));
+//			this._enemy.addEnemy("enemy_201", Enemy_const.TYPE_BIG_STAR, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height),cc.p(0, BG_SPEED));
+//			this._block.addBlock("rock_1", Block_const.TYPE_1, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height));
 //			this._item.addItem("item_10", Item_const.TYPE_GOLD, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height));
+//			this._item.addItem("item_1", Item_const.TYPE_HELP, cc.p(Tools_Random(0,cc.winSize.width), cc.winSize.height));
+
 		}
 //		cc.log("yes 1 "+this._bullet.getActor().length);
 //			cc.log("x : "+this.actor1.getBone("test2").getWorldInfo().x);
@@ -363,5 +380,30 @@ var GameLayer = cc.Layer.extend({
 				}
 			}
 		}
+	},
+	
+	addSceneData : function() {
+		var data = cc.BinaryReadUtil.create(res.scene_1_data);
+		var num = data.readInt();
+		
+		for (var i = 0; i < num; i++) {
+			
+			cc.log(data.readUtf());
+			cc.log(data.readBool());
+			cc.log(data.readUtf());
+			cc.log(data.readInt());
+			cc.log(data.readInt());
+			cc.log(data.readFloat());
+			cc.log(data.readFloat());
+			cc.log(data.readFloat());
+			cc.log(data.readBool());
+			cc.log(data.readUtf());
+			cc.log(data.readInt());
+			cc.log(data.readUtf());
+			
+		}
+		
+		var endY = cc.log(data.readInt());
+		
 	},
 });

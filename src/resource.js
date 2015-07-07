@@ -12,12 +12,21 @@ var res = {
     
     enemy_1_csb : "res/enemy/enemy_1.csb",
     
+    enemy_200_csb : "res/enemy/enemy_200.csb",
+    
+    enemy_201_csb : "res/enemy/enemy_201.csb",
+    
     rock_1_csb : "res/block/rock_1.csb",
     
     gold_1_csb : "res/item/item_10.csb",
     
+    help_1_csb : "res/item/item_1.csb",
+    
     DemoPlayer_csb : "res/test/DemoPlayer.ExportJson",
- 
+    
+    scene_1_data : "res/scene/scene_1.data",
+    
+    
     
 };
 
@@ -27,7 +36,11 @@ var g_GameRes = [
     res.actor_1_csb,
     res.bullet_1_csb,
     res.enemy_1_csb,
+    res.enemy_200_csb,
+    res.enemy_201_csb,
     res.rock_1_csb,
     res.gold_1_csb,
+    res.help_1_csb,
     res.DemoPlayer_csb,
+    res.scene_1_data,
 ];

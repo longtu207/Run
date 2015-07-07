@@ -55,7 +55,7 @@ var Item = Actor.extend({
 					this.setState(Item_const.STATE_SHOW);
 					this._time = 0;
 					this.playWithIndex(2);
-					this.y = this.getBodyRect().height+10;
+					this.y = this.getBodyRect().height;
 				}else{
 					this.setState(Actor_const.STATE_DEAD);
 				}

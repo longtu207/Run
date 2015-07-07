@@ -84,8 +84,9 @@ var PlayerManage = ActorManage.extend({
 		for (var i = 0; i < this._add.length; i++) {
 			if (!this._add[i]) {
 				var player = new Player(name);
-				player.setPosition(this._pos[i][0], this._pos[i][1]);
+				player.setPosition(this._pos1[i][0], this._pos1[i][1]);
 				player.setIndext(i+6);
+				player.setLocalZOrder(-i-1);
 				this.addActor(player);
 				this.setBodyRect();
 				this._add[i]= true;

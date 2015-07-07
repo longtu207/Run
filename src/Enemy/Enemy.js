@@ -40,6 +40,8 @@ var Enemy = Actor.extend({
 		
 		if (this.getState() == Enemy_const.STATE_BEGAIN) {
 			
+			
+			
 			if(this.y > cc.winSize.height){
 				
 				this.setVisible(false);
@@ -52,11 +54,11 @@ var Enemy = Actor.extend({
 				}
 				
 			}else{
-				if (this.getAnimation().getIsPause()) {
+				if (this.getAnimation().isPause()) {
 
 				}
 
-				if (!this.getAnimation().getIsPlaying()) {
+				if (this.getAnimation().isComplete()) {
 					this._speedY = BG_SPEED*2;
 					this.setState(Actor_const.STATE_NORMAL);
 					this.playWithIndex(1);
@@ -66,7 +68,7 @@ var Enemy = Actor.extend({
 				}
 
 				if (this._type == Enemy_const.TYPE_BIG_STAR) {
-					this.x = Game_instance.getPlayer().x;
+					this.x = Game_instance.getPlayer().getActor()[0].x+Game_instance.getPlayer().x;
 				}
 			}
 			
@@ -80,14 +82,14 @@ var Enemy = Actor.extend({
 			this.y+=this._speedY;
 			
 			if (this._type == Enemy_const.TYPE_1) {
-				if(this.getAnimation().getMovementID() == "Animation2"&&this.getAnimation().getIsComplete()){
+				if(this.getAnimation().getMovementID() == "Animation2"&&this.getAnimation().isComplete()){
 					this.playWithIndex(0);
 				}
 			}else{
 				if (this._type == Enemy_const.TYPE_BIG_STAR) {
 					this._time--;
 					if (this._time>0) {
-						this.x = Game_instance.x;
+						this.x = Game_instance.getPlayer().getActor()[0].x+Game_instance.getPlayer().x;
 					}
 				}
 			}

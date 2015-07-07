@@ -48,9 +48,19 @@
  */
 
 cc.game.onStart = function(){
-    if(!cc.sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
-        document.body.removeChild(document.getElementById("cocosLoading"));
-
+//    if(!cc.sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
+//        document.body.removeChild(document.getElementById("cocosLoading"));
+//    
+//    // 搜索路径 res 为编辑器用
+//    var searchPaths = jsb.fileUtils.getSearchPaths();
+//    var paths = [
+//                 'res'
+//                 ];
+//    for (var i = 0; i < paths.length; i++) {
+//    		searchPaths.push(paths[i]);
+//    }
+//    jsb.fileUtils.setSearchPaths(searchPaths);
+    
     // Pass true to enable retina display, disabled by default to improve performance
     cc.view.enableRetina(false);
     // Adjust viewport meta

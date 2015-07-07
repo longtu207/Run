@@ -59,7 +59,7 @@ var Actor = ccs.Armature.extend({
 //		cc.getmap
 //		cc.log("le : "+ this.getBoneNum());
 //		cc.log("name : "+this.getAnimation().getMovementID());
-		for(var i = 0 ; i < this.getBoneNum() ; ++i){
+		for(var i = 1 ; i < this.getBoneNum() ; ++i){
 			var str = "body"+i+"_1";
 			
 			if(this.getBone(str)){
