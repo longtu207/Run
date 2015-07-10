@@ -41,6 +41,8 @@ var GameLayer = cc.Layer.extend({
 	
 	_addET : 0,
 	
+	_drawNode : null,
+	
 	ctor:function () {
 		
 		this._super();
@@ -48,6 +50,10 @@ var GameLayer = cc.Layer.extend({
 		Game_instance = this;
 		
 		this._winSize = new cc.size(cc.winSize.width, cc.winSize.height);
+		
+		_drawNode = new cc.DrawNode();
+
+		this.addChild(_drawNode, 110);
 		
 //		var test = new SpriteManage();
 //		this.addChild(test, 100);
