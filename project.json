@@ -14,17 +14,18 @@
   "jsList": [
     "src/resource.js",
     "src/app.js",
+    "src/ZSEngine/Actor.js",
+    "src/ZSEngine/ActorManage.js",
+    "src/ZSEngine/Tools.js",
+    "src/ZSEngine/Sprite.js",
+    "src/ZSEngine/SpriteManage.js",
+    "src/ZSEngine/Http.js",
     "src/Game.js",
     "src/BackGround/BackGround.js",
     "src/BackGround/ForeGround.js",
     "src/Common/Common.js",
-    "src/ZSEngine/Actor.js",
-    "src/ZSEngine/ActorManage.js",
     "src/Player/Player.js",
     "src/Player/PlayerManage.js",
-    "src/ZSEngine/Tools.js",
-    "src/ZSEngine/Sprite.js",
-    "src/ZSEngine/SpriteManage.js",
     "src/Bullet/Bullet.js",
     "src/Bullet/BulletManage.js",
     "src/Enemy/Enemy.js",
@@ -33,5 +34,6 @@
     "src/Block/BlockManage.js",
     "src/Item/Item.js",
     "src/Item/ItemManage.js"
+    
   ]
 }

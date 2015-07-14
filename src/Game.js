@@ -5,6 +5,7 @@ var GameScene = cc.Scene.extend({
 		this.addChild(layer);
 	}
 });
+
 var Game_instance = null;
 var GameLayer = cc.Layer.extend({
 	
@@ -50,6 +51,8 @@ var GameLayer = cc.Layer.extend({
 		Game_instance = this;
 		
 		this._winSize = new cc.size(cc.winSize.width, cc.winSize.height);
+		
+		http.post("http://192.168.1.111/test","ant=asdasd&pwd=hahaha", this.httpSuc, this.httpErr);
 		
 		_drawNode = new cc.DrawNode();
 
@@ -128,7 +131,7 @@ var GameLayer = cc.Layer.extend({
 		this.addTouches();
 		
 		this.scheduleUpdate();
-		this.addSceneData();
+//		this.addSceneData();
 		
 		
 		return true;
@@ -411,5 +414,14 @@ var GameLayer = cc.Layer.extend({
 		
 		var endY = cc.log(data.readInt());
 		
+	},
+	
+	httpSuc : function(data) {
+		
+		cc.log("httpSuc get response : "+data);
+	},
+	
+	httpErr : function() {
+		cc.log("fail");
 	},
 });

@@ -1,5 +1,6 @@
 var DEBUG_DRAW = false;
 
+
 Tools_RectMix = function(rect1,rect2){
 	
 	var x1 = Math.min(cc.rectGetMinX(rect1),cc.rectGetMinX(rect2));
