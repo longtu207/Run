@@ -318,7 +318,6 @@ const cocos2d::Map<std::string, Bone*>& Armature::getBoneDic() const
     
 const ssize_t Armature::getBoneNum() const
 {
-//    CCLOG("name : %s",this->getAnimation()->_movementID);
     return _boneDic.size();
 }
 

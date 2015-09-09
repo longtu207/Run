@@ -148,6 +148,7 @@ public:
     
         
     /**
+     * zs add!
      * Get Armature's bone num
      * @return Armature's bone num
      */

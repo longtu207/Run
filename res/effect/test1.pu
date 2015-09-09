@@ -1,0 +1,42 @@
+system test1
+{
+    category                                    test
+    technique 
+    {
+        material                                test2
+        default_particle_width                  10
+        default_particle_height                 10
+        default_particle_depth                  10
+        spatial_hashing_cell_dimension          150
+        renderer                                Billboard
+        {
+        }
+        emitter                                 Point 
+        {
+            angle                               0
+            velocity                            2.02759
+        }
+        affector                                Colour Affector0
+        {
+            mass_affector                       14
+            time_colour                         0    0 0 0 0
+            time_colour                         0.219565  1 1 1 1
+            time_colour                         0.826087  1 1 1 1
+            time_colour                         1    0 0 0 0
+        }
+        affector                                TextureRotator Affector3
+        {
+            rotation                            dyn_random
+            {
+                min                             0
+                max                             360
+            }
+            rotation_speed                      dyn_curved_spline
+            {
+                control_point                   0 0.00554019
+                control_point                   0.45941 0.795014
+                control_point                   0.98524 0.00277007
+            }
+        }
+    }
+}

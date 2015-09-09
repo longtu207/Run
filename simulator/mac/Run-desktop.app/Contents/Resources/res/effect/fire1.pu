@@ -1,0 +1,55 @@
+system ParticleSystem1
+{
+    technique 
+    {
+        material                                test1
+        default_particle_width                  1
+        default_particle_height                 1
+        default_particle_depth                  1
+        renderer                                Billboard
+        {
+        }
+        emitter                                 Point Emitter31
+        {
+            angle                               0
+            time_to_live                        2
+            mass                                0
+            velocity                            dyn_random
+            {
+                min                             0.5
+                max                             1
+            }
+            all_particle_dimensions             dyn_random
+            {
+                min                             1
+                max                             2
+            }
+            start_colour_range                  1 1 1 1
+            auto_direction                      true
+        }
+        affector                                TextureRotator Affector178
+        {
+            rotation                            dyn_random
+            {
+                min                             0
+                max                             360
+            }
+            rotation_speed                      dyn_curved_linear
+            {
+                control_point                   0.00922509 0.393352
+                control_point                   0.49631 0.0720221
+                control_point                   0.968635 0.434903
+            }
+        }
+        affector                                Colour Affector179
+        {
+            mass_affector                       0.2
+            time_colour                         0    1 1 1 1
+            time_colour                         0.669565  1 1 1 1
+            time_colour                         1    0 0 0 0
+        }
+        affector                                Scale Affector191
+        {
+        }
+    }
+}

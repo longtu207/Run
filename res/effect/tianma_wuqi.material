@@ -1,0 +1,22 @@
+
+material tianma_wuqi
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend add
+			depth_check off
+			depth_write off
+
+			texture_unit tianma_wuqi.PNG
+			{
+				texture_alias tianma_wuqi.PNG
+				texture tianma_wuqi.PNG
+			}
+		}
+
+	}
+
+}

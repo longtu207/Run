@@ -1,6 +1,12 @@
 *.DS_Store
 frameworks/
+frameworks4-3.7.1/
+frameworks5-3.6/
 publish/
 runtime/
 tools/
-
+tools1/
+tools2/
+tools4/
+tools5/
+upgrade_bak/

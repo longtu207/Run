@@ -1,0 +1,22 @@
+
+material test1
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend src_colour one
+			depth_check off
+			depth_write off
+
+			texture_unit yanhuo0203_242.png
+			{
+				texture_alias yanhuo0203_242.png
+				texture yanhuo0203_242.png
+			}
+		}
+
+	}
+
+}

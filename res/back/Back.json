@@ -1,0 +1,853 @@
+{
+  "ID": "0e8398b4-4e9c-4039-b484-9161734dceb5",
+  "Version": "2.3.1.2",
+  "Name": "Back",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 5,
+        "Children": [
+          {
+            "Fov": 60.0,
+            "ViewSize": {
+              "X": 640.0,
+              "Y": 960.0
+            },
+            "ClipPlane": {
+              "X": 1.0,
+              "Y": 1000.0
+            },
+            "UserCameraFlagMode": "USER1",
+            "CColor": {},
+            "Position3D": {
+              "X": 14.7185,
+              "Y": 11.1677,
+              "Z": 47.0976
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 31,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "UserCamera_0",
+            "ctype": "UserCameraObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_0.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 10.3907,
+              "Y": 0.0,
+              "Z": -3.4332
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 23,
+            "ActionTag": 1891200727,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_0",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_1.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 22.3961,
+              "Y": 0.0,
+              "Z": -1.4653
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 24,
+            "ActionTag": -712842765,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_1",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_10.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 3.6346,
+              "Y": 0.0,
+              "Z": -0.1565
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 25,
+            "ActionTag": 135277020,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_10",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_2.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 20.7838,
+              "Y": 0.0,
+              "Z": 1.0043
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 26,
+            "ActionTag": -1075122885,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_2",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_8.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": -1.9675,
+              "Y": 0.0,
+              "Z": -0.0047
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 29,
+            "ActionTag": -1924206618,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_8",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_9.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 29.8165,
+              "Y": 0.0,
+              "Z": 1.8159
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 30,
+            "ActionTag": 272300182,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_9",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_7.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 8.2216,
+              "Y": 0.0,
+              "Z": 0.933
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 31,
+            "ActionTag": -516359144,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_7",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_6.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 15.053,
+              "Y": 0.0,
+              "Z": 2.1037
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 32,
+            "ActionTag": -505561669,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_6",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_4.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 22.8913,
+              "Y": 0.0,
+              "Z": 2.221
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 33,
+            "ActionTag": 1339258129,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_4",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_3.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 5.0716,
+              "Y": 0.0,
+              "Z": 1.8448
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 34,
+            "ActionTag": 837242674,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_3",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_27.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 11.6614,
+              "Y": 0.0,
+              "Z": 2.7081
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 35,
+            "ActionTag": -1740194140,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_27",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_25.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 18.6966,
+              "Y": 0.0,
+              "Z": 2.63
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 37,
+            "ActionTag": -1551223644,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_25",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_24.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 23.4306,
+              "Y": 0.0,
+              "Z": 3.4274
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 38,
+            "ActionTag": 454903251,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_24",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_24.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 11.3831,
+              "Y": 0.0,
+              "Z": 0.8146
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 39,
+            "ActionTag": -880726004,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_24",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_23.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 14.01,
+              "Y": 0.0,
+              "Z": 1.3431
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 40,
+            "ActionTag": 1400869402,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_23",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_23.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 20.7521,
+              "Y": 0.0,
+              "Z": 7.0462
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 41,
+            "ActionTag": 48646442,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_23",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_22.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 4.9562,
+              "Y": 0.0,
+              "Z": 4.7391
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 42,
+            "ActionTag": 1946774863,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_22",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_21.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 10.9793,
+              "Y": 0.0,
+              "Z": 7.5146
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 43,
+            "ActionTag": -316386466,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_21",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_20.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 4.4498,
+              "Y": -3.4545,
+              "Z": -10.6417
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 44,
+            "ActionTag": -126556235,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_20",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_2.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 21.8287,
+              "Y": -3.1357,
+              "Z": -13.1498
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 45,
+            "ActionTag": -24264920,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_2",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/back/map_e_10.c3b",
+              "Plist": ""
+            },
+            "RunAction3D": false,
+            "CColor": {},
+            "Position3D": {
+              "X": 30.6561,
+              "Y": -3.2339,
+              "Z": -14.166
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 46,
+            "ActionTag": 1089098499,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "map_e_10",
+            "ctype": "Sprite3DObjectData"
+          },
+          {
+            "Fov": 60.0,
+            "ViewSize": {
+              "X": 640.0,
+              "Y": 960.0
+            },
+            "ClipPlane": {
+              "X": 1.0,
+              "Y": 1000.0
+            },
+            "UserCameraFlagMode": "USER2",
+            "CColor": {},
+            "Position3D": {
+              "X": 4.4813,
+              "Y": 4.888,
+              "Z": 23.3966
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 49,
+            "ActionTag": -292356690,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "UserCamera_1",
+            "ctype": "UserCameraObjectData"
+          },
+          {
+            "Fov": 60.0,
+            "ViewSize": {
+              "X": 640.0,
+              "Y": 960.0
+            },
+            "ClipPlane": {
+              "X": 1.0,
+              "Y": 1000.0
+            },
+            "UserCameraFlagMode": "USER3",
+            "CColor": {},
+            "Position3D": {
+              "X": 27.0486,
+              "Y": 4.8,
+              "Z": 23.3
+            },
+            "Rotation3D": {
+              "X": 0.0,
+              "Y": 2.7458,
+              "Z": 0.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            },
+            "CameraFlagMode": 30,
+            "Tag": 50,
+            "ActionTag": 824638508,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "UserCamera_2",
+            "ctype": "UserCameraObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Scene3D",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "res/back/Atlas1.png",
+        "res/back/map_e_0.c3b",
+        "res/back/map_e_1.c3b",
+        "res/back/map_e_10.c3b",
+        "res/back/map_e_2.c3b",
+        "res/back/map_e_20.c3b",
+        "res/back/map_e_21.c3b",
+        "res/back/map_e_22.c3b",
+        "res/back/map_e_23.c3b",
+        "res/back/map_e_24.c3b",
+        "res/back/map_e_25.c3b",
+        "res/back/map_e_27.c3b",
+        "res/back/map_e_3.c3b",
+        "res/back/map_e_4.c3b",
+        "res/back/map_e_6.c3b",
+        "res/back/map_e_7.c3b",
+        "res/back/map_e_8.c3b",
+        "res/back/map_e_9.c3b",
+        "res/back/Roads.png",
+        "res/back/Rock1.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene3D"
+}

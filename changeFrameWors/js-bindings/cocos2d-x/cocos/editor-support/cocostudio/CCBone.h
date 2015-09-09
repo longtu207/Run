@@ -210,6 +210,9 @@ public:
 
     virtual BaseData *getWorldInfo()  { return new BaseData(); }
     
+    /*
+     * zs add!
+     */
     virtual cocos2d::Point getPos() const;
 //    BaseData* getPos();
     

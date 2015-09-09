@@ -1,0 +1,22 @@
+
+material star
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend add
+			depth_check off
+			depth_write off
+
+			texture_unit star.png
+			{
+				texture_alias star.png
+				texture star.png
+			}
+		}
+
+	}
+
+}

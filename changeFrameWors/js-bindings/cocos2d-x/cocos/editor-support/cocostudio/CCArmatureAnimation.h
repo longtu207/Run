@@ -182,6 +182,7 @@ public:
     std::string getCurrentMovementID() const;
     
     /**
+     * zs add!
      * Get current movementID
      * @return The name of current movement
      */
