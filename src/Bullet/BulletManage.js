@@ -4,13 +4,20 @@ var BulletManage = ActorManage.extend({
 		return true;
 	},
 	
-	addBullet : function(type,x,y,sx,sy) {
+	addBullet : function(type,atk,x,y,s,r) {
 		var bullet = new Bullet("bullet_1",type);
 		
 		bullet.setPosition(x, y);
-		
-		bullet.setSpeed(sx, sy);
-		
+		bullet.setAtk(atk);
+		bullet.makeSpeedAndRotation(s,r);
+		this.addAtBullet(bullet);
+	},
+	
+	addAtBullet : function(bullet){
+		bullet.playWithIndex(0);
+
+//		bullet.getAnimation().setSpeedScale(0.5);
+
 		this.addActor(bullet);
 	},
 });

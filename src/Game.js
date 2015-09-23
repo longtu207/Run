@@ -31,11 +31,16 @@ var Game = cc.Layer.extend({
 		
 		this.addChild(this._gameLayer);
 		
-//		this.addMouse();
+		this.addTouches();
+		this.addMouse();
 		
 		this.scheduleUpdate();
 		
 		return true;
+	},
+	
+	getPsub : function(p1,p2){
+		return cc.pSub(p1, p2);
 	},
 	
 	getGameLayer : function() {
@@ -58,26 +63,35 @@ var Game = cc.Layer.extend({
 	},
 
 	onTouchBegan:function(touch, event) {
+		var target = event.getCurrentTarget();
 		var pos = touch.getLocation();
 		var id = touch.getID();
-		cc.log("onTouchBegan at: " + pos.x + " " + pos.y + " Id:" + id );
-
+//		cc.log("onTouchBegan at: " + pos.x + " " + pos.y + " Id:" + id );
+		target._oldTouchPos = pos;
 		return true;
 
 	},
 	onTouchMoved:function(touch, event) {
+		var target = event.getCurrentTarget();
 		var pos = touch.getLocation();
 		var id = touch.getID();
-		cc.log("onTouchMoved at: " + pos.x + " " + pos.y + " Id:" + id );
+//		cc.log("onTouchMoved at: " + pos.x + " " + pos.y + " Id:" + id );
+		
+		target._moveTouchPos = cc.pSub(pos, target._oldTouchPos);
 
+		target.getGameLayer().addPlayerPos(target._moveTouchPos.x,0);
+		target._oldTouchPos = pos;
 	},
 	onTouchEnded:function(touch, event) {
+		var target = event.getCurrentTarget();
 		var pos = touch.getLocation();
 		var id = touch.getID();
-		cc.log("onTouchEnded at: " + pos.x + " " + pos.y + " Id:" + id );
-
+//		cc.log("onTouchEnded at: " + pos.x + " " + pos.y + " Id:" + id );
+		target.getGameLayer().playerStand();
+		
 	},
 	onTouchCancelled:function(touch, event) {
+		var target = event.getCurrentTarget();
 		var pos = touch.getLocation();
 		var id = touch.getID();
 		cc.log("onTouchCancelled at: " + pos.x + " " + pos.y + " Id:" + id );
@@ -108,17 +122,22 @@ var Game = cc.Layer.extend({
 //					target.getGameLayer()._player.x = pos.x;
 //					target.getGameLayer()._player.y = pos.y;
 					if (target._isDown) {
-					
-						target._moveTouchPos = cc.pSub(pos, target._oldTouchPos);
-						target.getGameLayer()._player.x += target._moveTouchPos.x; 
 						
-						if (target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect())<=0) {
-							target.getGameLayer()._player.x -= target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect());
-						}
+//						if(target.getGameLayer().getCamera().getNumberOfRunningActions()==0){
+							target._moveTouchPos = cc.pSub(pos, target._oldTouchPos);
+							
+							target.getGameLayer().addPlayerPos(target._moveTouchPos.x,0);
+//						}
 						
-						else if(target.getGameLayer()._player.x + cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())>=target._winSize.width){
-							target.getGameLayer()._player.x += target._winSize.width-(cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())+target.getGameLayer()._player.x);
-						}
+						
+						
+//						if (target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect())<=0) {
+//							target.getGameLayer()._player.x -= target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect());
+//						}
+						
+//						else if(target.getGameLayer()._player.x + cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())>=target._winSize.width){
+//							target.getGameLayer()._player.x += target._winSize.width-(cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())+target.getGameLayer()._player.x);
+//						}
 					}
 					target._oldTouchPos = pos;
 				},
@@ -129,6 +148,7 @@ var Game = cc.Layer.extend({
 //					cc.log("onMouseUp at: " + pos.x + " " + pos.y );
 					
 					target._isDown = false;
+                    target.getGameLayer().playerStand();
 				}
 			}, this);
 		} else {

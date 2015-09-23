@@ -31,7 +31,7 @@ var Game = cc.Layer.extend({
 		
 		this.addChild(this._gameLayer);
 		
-//		this.addMouse();
+		this.addMouse();
 		
 		this.scheduleUpdate();
 		
@@ -108,17 +108,22 @@ var Game = cc.Layer.extend({
 //					target.getGameLayer()._player.x = pos.x;
 //					target.getGameLayer()._player.y = pos.y;
 					if (target._isDown) {
-					
-						target._moveTouchPos = cc.pSub(pos, target._oldTouchPos);
-						target.getGameLayer()._player.x += target._moveTouchPos.x; 
 						
-						if (target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect())<=0) {
-							target.getGameLayer()._player.x -= target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect());
+						if(target.getGameLayer().getCamera().getNumberOfRunningActions()==0){
+							target._moveTouchPos = cc.pSub(pos, target._oldTouchPos);
+							
+							target.getGameLayer().addPlayerPos(target._moveTouchPos.x*0.05);
 						}
 						
-						else if(target.getGameLayer()._player.x + cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())>=target._winSize.width){
-							target.getGameLayer()._player.x += target._winSize.width-(cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())+target.getGameLayer()._player.x);
-						}
+						
+						
+//						if (target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect())<=0) {
+//							target.getGameLayer()._player.x -= target.getGameLayer()._player.x + cc.rectGetMinX(target.getGameLayer()._player.getBodyRect());
+//						}
+						
+//						else if(target.getGameLayer()._player.x + cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())>=target._winSize.width){
+//							target.getGameLayer()._player.x += target._winSize.width-(cc.rectGetMaxX(target.getGameLayer()._player.getBodyRect())+target.getGameLayer()._player.x);
+//						}
 					}
 					target._oldTouchPos = pos;
 				},
@@ -129,6 +134,7 @@ var Game = cc.Layer.extend({
 //					cc.log("onMouseUp at: " + pos.x + " " + pos.y );
 					
 					target._isDown = false;
+                    target.getGameLayer().playerStand();
 				}
 			}, this);
 		} else {

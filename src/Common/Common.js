@@ -1,9 +1,8 @@
 
-
 var FPS = 30;
 
-var BG_SPEED = -20;
-var FG_SPEED = -10;
+var BG_SPEED = -10;
+var FG_SPEED = -5;
 
 var BULLET_ID = 0;
 

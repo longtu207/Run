@@ -18,24 +18,26 @@ var PlayerManage = Actor3DManage.extend({
 		this._super();
 		
 		var win = cc.winSize;
-		var pos = [0,10,-5];
 		
+		
+		var pos = [0,0,0];
+
 		var jx = 2;
 		var jy = 4;
-		var jz = 6;
-		
+		var jz = 0;
+
 		this._pos_begain.push(pos);
-		
+
 		this._pos_begain.push([pos[0]-jx,pos[1]-jy,pos[2]]);
-		
+
 		this._pos_begain.push([pos[0]+jx,pos[1]-jy,pos[2]]);
-		
+
 		this._pos_begain.push([pos[0]-jx*2,pos[1]-jy*2,pos[2]]);
-		
+
 		this._pos_begain.push([pos[0],pos[1]-jy*2,pos[2]]);
-		
+
 		this._pos_begain.push([pos[0]+jx*2,pos[1]-jy*2,pos[2]]);
-		
+
 		this._pos1.push([pos[0]-jx,pos[1]+jy]);
 		this._pos1.push([pos[0]+jx,pos[1]+jy]);
 		this._pos1.push([pos[0]-jx*2,pos[1]+jy*2]);
@@ -43,26 +45,73 @@ var PlayerManage = Actor3DManage.extend({
 		this._pos1.push([pos[0],pos[1]+jy*2]);
 
 		this._pos1.push([pos[0]+jx*2,pos[1]+jy*2]);
-		
-//		this._bodyRect = new cc.rect(0,0,0,0);
-		
-		var pos = [0,20,-10];
 
-		var jx = 1.5;
-		var jy = 4;
-		var jz = -4;
+//		this._bodyRect = new cc.rect(0,0,0,0);
+
+		var pos = [win.width*0.5,250,0];
+
+		var jx = 40;
+		var jy = 100;
+		var jz = 0;
 
 		this._pos.push(pos);
 
-		this._pos.push([pos[0]-jx,pos[1],pos[2]-jz]);
+		this._pos.push([pos[0]-jx,pos[1]-jy,pos[2]-jz]);
 
-		this._pos.push([pos[0]+jx,pos[1],pos[2]-jz]);
+		this._pos.push([pos[0]+jx,pos[1]-jy,pos[2]-jz]);
 
-		this._pos.push([pos[0]-jx*2,pos[1],pos[2]-jz*2]);
+		this._pos.push([pos[0]-jx*2,pos[1]-jy*2,pos[2]-jz*2]);
 
-		this._pos.push([pos[0],pos[1],pos[2]-jz*2]);
+		this._pos.push([pos[0],pos[1]-jy*2,pos[2]-jz*2]);
 
-		this._pos.push([pos[0]+jx*2,pos[1],pos[2]-jz*2]);
+		this._pos.push([pos[0]+jx*2,pos[1]-jy*2,pos[2]-jz*2]);
+		
+		
+//		var pos = [0,10,-5];
+//		
+//		var jx = 2;
+//		var jy = 4;
+//		var jz = 6;
+//		
+//		this._pos_begain.push(pos);
+//		
+//		this._pos_begain.push([pos[0]-jx,pos[1]-jy,pos[2]]);
+//		
+//		this._pos_begain.push([pos[0]+jx,pos[1]-jy,pos[2]]);
+//		
+//		this._pos_begain.push([pos[0]-jx*2,pos[1]-jy*2,pos[2]]);
+//		
+//		this._pos_begain.push([pos[0],pos[1]-jy*2,pos[2]]);
+//		
+//		this._pos_begain.push([pos[0]+jx*2,pos[1]-jy*2,pos[2]]);
+//		
+//		this._pos1.push([pos[0]-jx,pos[1]+jy]);
+//		this._pos1.push([pos[0]+jx,pos[1]+jy]);
+//		this._pos1.push([pos[0]-jx*2,pos[1]+jy*2]);
+//
+//		this._pos1.push([pos[0],pos[1]+jy*2]);
+//
+//		this._pos1.push([pos[0]+jx*2,pos[1]+jy*2]);
+//		
+////		this._bodyRect = new cc.rect(0,0,0,0);
+//		
+//		var pos = [0,20,-10];
+//
+//		var jx = 1.5;
+//		var jy = 4;
+//		var jz = -4;
+//
+//		this._pos.push(pos);
+//
+//		this._pos.push([pos[0]-jx,pos[1],pos[2]-jz]);
+//
+//		this._pos.push([pos[0]+jx,pos[1],pos[2]-jz]);
+//
+//		this._pos.push([pos[0]-jx*2,pos[1],pos[2]-jz*2]);
+//
+//		this._pos.push([pos[0],pos[1],pos[2]-jz*2]);
+//
+//		this._pos.push([pos[0]+jx*2,pos[1],pos[2]-jz*2]);
 		
 		
 		return true;
@@ -71,28 +120,38 @@ var PlayerManage = Actor3DManage.extend({
 	addPlayer : function(player , indext) {
 		
 		
-		player.setRotation3D(cc.math.vec3(-90,180,0));
-		player.setScale(0.1);
-		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1]-17,this._pos_begain[indext][2]));
 		
-		var seq = cc.sequence(cc.spawn(cc.moveTo(1, cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2])),cc.rotateBy(1, cc.math.vec3(0,720,0))),
-				cc.spawn(cc.moveTo(3, cc.math.vec3(this._pos[indext][0],this._pos[indext][1],this._pos[indext][2])),cc.rotateBy(3, cc.math.vec3(60,0,0))));
+		player.setRotation3D(cc.math.vec3(-60,180,0));
+		player.setPosition3D(cc.math.vec3(this._pos[indext][0],this._pos[indext][1],this._pos[indext][2]));
+		player.setScale(2.5);
+        
+//		player.setRotation3D(cc.math.vec3(-40,180,0));
+//		
+//		player.setScale(0.1);
+//		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1]-17,this._pos_begain[indext][2]));
+////		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2]));
+		
+		var test1 =  jsb.PUParticleSystem3D.create("star.pu", "star.material");
+//		test1.setPosition3D(cc.math.vec3(0,0,0));
+		test1.setKeepLocal(true);
+		test1.setRotation3D(cc.math.vec3(0,0,60));
+		test1.setScale(10);
+		test1.startParticleSystem();
+		player.getAttachNode("Bip001 R Hand").addChild(test1);
 
-		player.runAction(seq);
+		
+//		var seq = cc.sequence(cc.spawn(cc.moveTo(1, cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2])),cc.rotateBy(1, cc.math.vec3(0,720,0))),
+//				cc.spawn(cc.moveTo(3, cc.math.vec3(this._pos[indext][0],this._pos[indext][1],this._pos[indext][2])),cc.rotateBy(3, cc.math.vec3(60,0,0))));
+//
+//		player.runAction(seq);
 		
 //		player.setPosition3D(cc.math.vec3(this._pos[indext][0],this._pos[indext][1]-20,-5));
 		
 //		player.setRotation3D(cc.math.vec3(-90,180,0));
 //		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2]));
-		player.setScale(0.1);
 		player.setIndext(indext);
 		
-		var test1 =  jsb.PUParticleSystem3D.create("star.pu", "star.material");
-		test1.setPosition3D(cc.math.vec3(12,0,7));
-		test1.setRotation3D(cc.math.vec3(-90,0,0));
-		test1.setScale(8);
-		test1.startParticleSystem();
-		player.addChild(test1);
+
 		
 		this.addActor3D(player);
 		

@@ -16,16 +16,17 @@ var Actor3D = jsb.Sprite3D.extend({
 	_darwNode : null,
 	
 	_name : "noName",
-	_obbt:null,
+	
+	_animateName : "",
+	_bodyCube:null,
+	
 	ctor:function (name) {
 
 		this._super(name);
-		
-		if(DEBUG_DRAW){
-			this._darwNode =new cc.DrawNode3D();
-			this.addChild(this._darwNode);
-		}
-		
+		this._animateName = name;
+        var aabb = this.getAABB();
+        this._bodyCube = cc.math.obb(aabb);
+     
 		return true;
 	},
 	
@@ -45,27 +46,76 @@ var Actor3D = jsb.Sprite3D.extend({
 		return this._name;
 	},
 	
+	setAnimName : function(name) {
+		this._animateName = name;
+	},
+	
+	getAnimName : function() {
+	   return this._animateName;
+	},
+	
 	cycle:function(dt){
 		
-		if(DEBUG_DRAW){
-			cc.log("draw");
-			this.debugDraw();
+		
+	},
+       
+	
+	
+	playWithFrames:function(name,begin,end,isForever,speed){
+		
+		var animation = jsb.Animation3D.create(name);
+		
+		if(animation){
+
+			var animate = jsb.Animate3D.createWithFrames(animation,begin,end);
+			
+			
+			this.playAnimate(animate,isForever,speed);
+
+		}else{
+			cc.log("play "+name+" is null");
+		}
+	},
+                                  
+	
+	playWithTime:function(name,begin,end,isForever,speed){
+		var animation = jsb.Animation3D.create(name);
+
+		if(animation){
+
+			var animate = jsb.Animate3D.create(animation,begin,end);
+
+			this.playAnimate(animate,isForever,speed);
+
+		}else{
+			cc.log("play "+name+" is null");
 		}
 	},
 	
-	play:function(name,isForever){
+	play:function(name,isForever,speed){
 		var animation = jsb.Animation3D.create(name);
 
 		if(animation){
 			
 			var animate = jsb.Animate3D.create(animation);
 			
-			if(isForever){
-				this.runAction(cc.repeatForever(animate));
-			}
+			this.playAnimate(animate,isForever,speed);
 			
 		}else{
 			cc.log("play "+name+" is null");
+		}
+	},
+	
+	playAnimate : function(animate,isForever,speed) {
+		
+		if(speed){
+			animate.setSpeed(speed);
+		}
+		
+		if(isForever){
+			this.runAction(cc.repeatForever(animate));
+		}else{
+			this.runAction(animate);
 		}
 	},
 	
@@ -94,34 +144,36 @@ var Actor3D = jsb.Sprite3D.extend({
 	},
 	
 	
-	debugDraw:function(){
+	getDrawCube:function(){
 
-		this._darwNode.clear();
-
+//		this._darwNode.clear();
+//
 //		this._darwNode.drawRect(cc.p(this.getBodyRect().x, this.getBodyRect().y), cc.p(this.getBodyRect().x+this.getBodyRect().width, this.getBodyRect().y+this.getBodyRect().height), cc.color(255, 0, 0, 180), 2, cc.color(0, 0, 0, 180));
 //
 //		this._darwNode.drawCircle(cc.p(this.getBodyRect().x, this.getBodyRect().y), 10, 360, 10, true, 5, cc.color(255, 255, 255, 100));
 		
 		var mat = this.getNodeToWorldTransform3D();
-		this._obbt.xAxis.x = mat[0];
-		this._obbt.xAxis.y = mat[1];
-		this._obbt.xAxis.z = mat[2];
-		this._obbt.xAxis.normalize();
+        
+		this._bodyCube.xAxis.x = mat[0];
+		this._bodyCube.xAxis.y = mat[1];
+		this._bodyCube.xAxis.z = mat[2];
+		this._bodyCube.xAxis.normalize();
 
-		this._obbt.yAxis.x = mat[4];
-		this._obbt.yAxis.y = mat[5];
-		this._obbt.yAxis.z = mat[6];
-		this._obbt.yAxis.normalize();
+		this._bodyCube.yAxis.x = mat[4];
+		this._bodyCube.yAxis.y = mat[5];
+		this._bodyCube.yAxis.z = mat[6];
+		this._bodyCube.yAxis.normalize();
 
-		this._obbt.zAxis.x = -mat[8];
-		this._obbt.zAxis.y = -mat[9];
-		this._obbt.zAxis.z = -mat[10];
-		this._obbt.zAxis.normalize();
+		this._bodyCube.zAxis.x = -mat[8];
+		this._bodyCube.zAxis.y = -mat[9];
+		this._bodyCube.zAxis.z = -mat[10];
+		this._bodyCube.zAxis.normalize();
 
-		this._obbt.center = this.getPosition3D();
+		this._bodyCube.center = this.getPosition3D();
 
-		var corners = cc.math.obbGetCorners(this._obbt);
-		this._darwNode.drawCube(corners, cc.color(0, 0, 255));
+		var corners = cc.math.obbGetCorners(this._bodyCube);
+		
+		return this.corners;
 		
 	},
 });

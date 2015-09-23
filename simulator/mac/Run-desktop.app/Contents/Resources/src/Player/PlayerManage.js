@@ -70,10 +70,21 @@ var PlayerManage = Actor3DManage.extend({
 	
 	addPlayer : function(player , indext) {
 		
+        
+		player.setRotation3D(cc.math.vec3(-40,180,0));
 		
-		player.setRotation3D(cc.math.vec3(-90,180,0));
 		player.setScale(0.1);
 		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1]-17,this._pos_begain[indext][2]));
+//		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2]));
+		
+		var test1 =  jsb.PUParticleSystem3D.create("star.pu", "star.material");
+//		test1.setPosition3D(cc.math.vec3(0,0,0));
+		test1.setKeepLocal(true);
+		test1.setRotation3D(cc.math.vec3(0,0,60));
+		test1.setScale(10);
+		test1.startParticleSystem();
+		player.getAttachNode("Bip001 R Hand").addChild(test1);
+//		player.addChild(test1);
 		
 		var seq = cc.sequence(cc.spawn(cc.moveTo(1, cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2])),cc.rotateBy(1, cc.math.vec3(0,720,0))),
 				cc.spawn(cc.moveTo(3, cc.math.vec3(this._pos[indext][0],this._pos[indext][1],this._pos[indext][2])),cc.rotateBy(3, cc.math.vec3(60,0,0))));
@@ -84,15 +95,9 @@ var PlayerManage = Actor3DManage.extend({
 		
 //		player.setRotation3D(cc.math.vec3(-90,180,0));
 //		player.setPosition3D(cc.math.vec3(this._pos_begain[indext][0],this._pos_begain[indext][1],this._pos_begain[indext][2]));
-		player.setScale(0.1);
 		player.setIndext(indext);
 		
-		var test1 =  jsb.PUParticleSystem3D.create("star.pu", "star.material");
-		test1.setPosition3D(cc.math.vec3(12,0,7));
-		test1.setRotation3D(cc.math.vec3(-90,0,0));
-		test1.setScale(8);
-		test1.startParticleSystem();
-		player.addChild(test1);
+
 		
 		this.addActor3D(player);
 		

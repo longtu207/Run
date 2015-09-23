@@ -33,12 +33,16 @@
     "src/Player/PlayerManage.js",
     "src/Bullet/Bullet.js",
     "src/Bullet/BulletManage.js",
-    "src/Enemy/Enemy.js",
-    "src/Enemy/EnemyManage.js",
     "src/Block/Block.js",
     "src/Block/BlockManage.js",
     "src/Item/Item.js",
-    "src/Item/ItemManage.js"
+    "src/Item/ItemManage.js",
+    "src/Enemy/Enemy3D.js",
+    "src/Enemy/Enemy3DManage.js",
+    "src/Enemy/Boss3D.js",
+    "src/Enemy/Boss3DManage.js",
+    "src/Enemy/Enemy.js",
+    "src/Enemy/EnemyManage.js"
     
   ]
 }

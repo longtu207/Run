@@ -123,4 +123,17 @@ var Actor = ccs.Armature.extend({
 		}
 		
 	},
+	
+	getAngleRadians : function(x,y){
+		return Math.atan((x-this.x)/(y-this.y));
+	},
+	
+	getAngleDegrees : function(x,y){
+		var angleDegrees = Tools_RADIANS_TO_DEGREES(this.getAngleRadians(x,y));
+		if(y<this.y){
+			angleDegrees+=180;
+		}
+		
+		return angleDegrees;
+	},
 });

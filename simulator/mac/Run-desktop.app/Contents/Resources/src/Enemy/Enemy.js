@@ -1,11 +1,8 @@
 var Enemy_const = {
 		
 		STATE_BEGAIN : 0,
-		
-		
 		TYPE_0 : 0,
-		TYPE_1 : 1,//正常小兵
-		
+		TYPE_1 : 1,//正常小兵	
 		TYPE_STAR : 11,//流星
 		TYPE_BIG_STAR : 21,//跟踪流星
 	
@@ -30,6 +27,8 @@ var Enemy = Actor.extend({
 		if (this._type == Enemy_const.TYPE_STAR||this._type == Enemy_const.TYPE_BIG_STAR) {
 			this.setState(Enemy_const.STATE_BEGAIN);
 		}
+		
+		
 
 		return true;
 	},

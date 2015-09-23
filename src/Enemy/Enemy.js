@@ -1,13 +1,13 @@
 var Enemy_const = {
 		
 		STATE_BEGAIN : 0,
-		
-		
 		TYPE_0 : 0,
-		TYPE_1 : 1,//正常小兵
+		TYPE_1 : 1,//正常小兵	
 		
 		TYPE_STAR : 11,//流星
 		TYPE_BIG_STAR : 21,//跟踪流星
+		
+		
 	
 };
 
@@ -20,6 +20,8 @@ var Enemy = Actor.extend({
 	_hp : 0,
 	_speedX : 0,
 	_speedY : 10,
+	
+	_effe : null,
 
 	ctor:function (name,type) {
 
@@ -30,6 +32,9 @@ var Enemy = Actor.extend({
 		if (this._type == Enemy_const.TYPE_STAR||this._type == Enemy_const.TYPE_BIG_STAR) {
 			this.setState(Enemy_const.STATE_BEGAIN);
 		}
+		
+		
+		
 
 		return true;
 	},
@@ -79,6 +84,7 @@ var Enemy = Actor.extend({
 				return;
 			}
 			
+			this.x+=this._speedX;
 			this.y+=this._speedY;
 			
 			if (this._type == Enemy_const.TYPE_1) {
@@ -96,12 +102,13 @@ var Enemy = Actor.extend({
 		}
 	},
 	
-	getType : function() {
-		return this._type;
+	setEffe : function(effe){
+		this._effe = null;
+		this._effe = effe;
 	},
 	
-	subHp : function(){
-		this.subHp(1);
+	getType : function() {
+		return this._type;
 	},
 	subHp : function(hp) {
 		this._hp -= hp;
